@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Rainbolt (a moderator telegram bot)",
+    "description": "I made this bot to be a 'fun sponge', it moderates the group and deletes any curse words. it has other regular bot features tho.",
+    "github": "https://github.com/lordryns/rainboltbot",
+    "project": "https://t.me/rainboltbot",
+    "is_active": true
+  }, 
+  {
+    "title": "Yomu",
+    "description": "A lightweight anime/manga bookmarking site",
+    "github": "https://github.com/lordryns/yomu",
+    "project": "https://wyomu.vercel.app/",
+    "is_active": "true"
+  }, 
+  {
+    "title": "Ripple",
+    "description": "A deepsearching tool for Android built for the Termux linux enviroment. In essence, it allows you to scan through every file on your device.",
+    "github": "https://github.com/lordryns/ripple",
+    "is_active": false
+  },
+  {
+    "title": "StashDB",
+    "description": "A python package that allows you to use a json file as a database (no longer being maintained, i lost access to my previous pypi account).",
+    "github": "https://github.com/lordryns/StashDB",
+    "project": "https://pypi.org/project/stashdb/",
+    "is_active": true
+  }
+]
