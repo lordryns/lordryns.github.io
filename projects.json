@@ -25,5 +25,14 @@
     "github": "https://github.com/lordryns/StashDB",
     "project": "https://pypi.org/project/stashdb/",
     "is_active": true
+  },
+
+{
+    "title": "Herald",
+    "description": "A webapp that allows you to send web requests, a minified and lightweight alternative to postman.",
+    "github": "https://github.com/lordryns/herald",
+    "project": "https://heraldweb.vercel.app/",
+    "is_active": true
   }
+
 ]
