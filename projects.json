@@ -33,5 +33,13 @@
     "github": "https://github.com/lordryns/herald",
     "project": "https://heraldweb.vercel.app/",
     "is_active": true
+  }, 
+
+ {
+    "title": "Vial",
+    "description": "A boilerplate generator for Flask (yes the python one), see why I named Vial? Flask == Vial, get it? Never mind, well it can make you life easier if you work with Flask.",
+    "github": "https://github.com/lordryns/vial",
+    "project": "",
+    "is_active": false
   }
 ]
