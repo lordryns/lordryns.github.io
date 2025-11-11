@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballad</title>
+</head>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+<body>
+     <div class="container">
+         <nav>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/project">Projects</a>
+        </nav>
+    <h1>Ballad</h1>
+    <p class="meta">A lightweight argument parser library for C</p>
+
+   
+    <p>Ballad follows a simple pattern and attempts to abstract away all the unnecessary complexity involved in the creation of tools so the developer can focus on creating their own software. </p> 
+
+    <h2> Table of contents </h2>
+    <div class="nav-div"> 
+	    <a href="#setup" class="nav-link">Setting up Ballad</a> <br>
+	    <a href="#first-program" class="nav-link">Your first program</a><br> 
+    	    <a href="#adding-commands" class="nav-link">Adding commands</a>  
+    </div>
+
+    <br>
+    <h3 id="setup">Setting up Ballad</h3>
+    <p>Ballad is extremely easy to setup and all you need to do to get started to add the  is <code>ballad.h</code> file which you can obtain from the <a href="https://github.com/lordryns/ballad">Ballad Github repository</a>. You can either clone the repo or download it and copy the <code>.h</code> into your project directory to use.
+
+ <pre><code class="language-shell">
+git clone https://github.com/lordryns/ballad.git
+    </code></pre>
+
+    </p> 
+    <br>
+    
+    <h3 id="first-program">Your first program</h3>
+   <p>Using Ballad is extremely simple, import it directly into your program to get started</p>
+  <pre><code class="language-c">
+#define BALLARD_IMPLEMENTATION
+#include "ballad.h"
+    </code></pre>
+
+    <p>After this, you can then initialize the cli inside your main function by using the <code>ballad_init</code> function and start it using the <code>ballad_run</code>  function </p>
+  <pre><code class="language-c">
+int main(int charc, char **charv) 
+{
+	BalladCli cli = ballad_init(charc, charv, "Create fun stuff with test-cli");	
+
+	ballad_run(cli); // important: the cli will not start if this is omitted
+	return 0;
+}
+    </code></pre>
+
+    <p>That's it! You can now compile your code and see the output</p> 
+
+ <pre><code class="language-shell">
+clang main.c -o test-cli && ./test-cli // or use gcc if you want   
+ </code></pre>
+
+ <p>Your program should compile successfully and the output should be like this </p> 
+ <pre><code class="language-shell">
+Usage: ./test-cli COMMAND [OPTIONS] [ARGS]
+
+	Create fun stuff with test-cli
+
+Options:
+	--help, -h  Show this message and exit.
+
+Commands:
+ </code></pre>
+
+ <h3 id="adding-commands">Adding commands</h3>
+ <p>Your code works as intended but You have not defined any valid commands yet, in order to do that You'd need to use the <code>ballad_add_command</code> function</p>
+
+
+  <pre><code class="language-c">
+ballad_add_command(&cli, (BalladCommand){"new", "Create a new project", create_new_project});
+    </code></pre>
+
+    <p> In case it wasn't obvious <code>ballad_add_command</code> takes two arguments, a pointer to the <code>BallardCli</code> and a <code>BallardCommand</code> struct which in turn takes three arguments which include the command name, help and the function to be executed. Full code would look like this: 
+  <pre><code class="language-c">
+#include <stdio.h>
+#define BALLAD_IMPLEMENTATION
+#include "ballad.h"
+
+void create_new_project(char *arg)
+{
+	printf("Your project '%s' created successfully!\n", arg);
+}
+
+int main(int charc, char **charv) 
+{
+	BalladCli cli = ballad_init(charc, charv, "Create fun stuff with test-cli");	
+ 	ballad_add_command(&cli, (BalladCommand){"new", "Create a new project", create_new_project});
+
+	ballad_run(cli);
+	return 0;
+}
+
+    </code></pre>
+
+
+
+    
+        <p>Links: <a href="/">Go to Main</a> <a href="/project/">Projects</a> </p>
+     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+</body>
+</html>
