@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confy</title>
+</head>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+<body>
+     <div class="container">
+         <nav>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/project">Projects</a>
+        </nav>
+    <h1>Confy</h1>
+    <p class="meta">The config manager you didn't know you needed</p>
+
+
+    <p>Confy's main selling point is convenience by attempting to provide an alternative to the usual messy way of dealing with configs</p>
+
+    <h2> Table of contents </h2>
+    <div class="nav-div"> 
+	    <a href="#setup" class="nav-link">Installing Confy</a> <br>
+	    <a href="#commands" class="nav-link">Commands</a><br> 
+    </div>
+
+    <br>
+    <h3 id="setup">Installing Confy</h3>
+
+    <p>Confy is still very early in development and so there is no executable yet. To test, clone the repo and build manually. To do this run</p>
+
+     <pre><code class="language-shell">
+go mod tidy && ./build.sh # build.sh is for Linux only (it's a bash script if that wasn't obvious), Windows users should use go build -o bin/confy.exe
+    </code></pre>
+    </p> 
+    <br>
+    
+   
+    <h3 id="commands">Using Confy</h3>
+    <p>Jump to <a href="#api-reference">Api reference</a> to see the complete reference</p>
+    <p>The <code>set</code> command is probably the one you'll be using most of the time. It's simple in practice, it sets a  new module/config and backs up the previous one</p>
+        <pre><code class="language-shell">
+confy set waybar path/to/new/waybar
+        </code></pre>
+
+        <p> The <code>rollback</code> command is one you'll like if you've ever messed up your config by mistake and spent hours trying to return it to its working state.</p>
+        <pre><code class="language-shell">
+confy rollback waybar
+        </code></pre>
+ 
+        
+        <p>Links: <a href="/">Go to Main</a> <a href="/project/">Projects</a> </p>
+     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+</body>
+</html>

@@ -97,3 +97,36 @@ nav a:hover {
 .nav-link:hover {
     color: var(--color-text);
 }
+
+.project-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+.project-title:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    text-decoration-color: rgba(0,0,0,0.4);
+}
+
+.project-desc {
+    margin-top: 4px;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.footer-links {
+    margin-top: 48px;
+}
